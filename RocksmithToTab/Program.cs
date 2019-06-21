@@ -348,6 +348,10 @@ namespace RocksmithToTab
             {
                 gpxExporter.ExportGpif(score, basePath + ".gpif");
             }
+            else if (outputFormat == "json")
+            {
+                System.IO.File.WriteAllText(basePath + ".json", score.Serialize());
+            }
             else
             {
                 gpxExporter.ExportGPX(score, basePath + ".gpx");

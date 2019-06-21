@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using RocksmithToolkitLib.Xml;
 
 namespace RocksmithToTabLib
@@ -31,6 +32,11 @@ namespace RocksmithToTabLib
         public List<string> Comments { get; set; }
 
         public List<Track> Tracks { get; set; }
+
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
 
 
         /// <summary>
